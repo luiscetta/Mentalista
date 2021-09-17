@@ -1,13 +1,12 @@
 body {
   margin: auto;
   font-family: "Roboto Mono", monospace;
-  width: 100%;
-  height: 100%;
   background-color: #252525;
 }
 
 .container {
   margin: auto;
+  margin-top: 4.5rem;
   text-align: center;
   padding: 20px;
   width: 75%;
@@ -15,6 +14,17 @@ body {
   border: 2px solid #c05106;
   border-radius: 1rem;
   background-color: #000;
+}
+
+form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+[hidden] {
+  display: none !important;
 }
 
 .content input {
@@ -35,6 +45,7 @@ button {
   border-radius: .4rem;
   margin-bottom: 2rem;
   background-color: #c05106;
+  color: #fff;
 }
 
 button:hover {
@@ -49,7 +60,7 @@ button:hover {
   z-index: -3;
   width: 15.3rem;
   height: 8rem;
-  margin: 2.5rem 0;
+  margin: 1rem 0 2.5rem;
 }
 
 .page-title {
@@ -84,8 +95,7 @@ button:hover {
   }
 }
 
-
-.resultado {
+.result {
   margin: auto;
   margin-bottom: 2rem;
   background-color: #c05106;
