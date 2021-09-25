@@ -10,6 +10,8 @@ let hideForm = false;
 let hideTryAgainButton = true;
 
 function toggleTryAgainButton() {
+  hideTryAgainButton = !hideTryAgainButton;
+
   document.getElementById("again-btn").hidden = hideTryAgainButton;
 }
 
@@ -32,6 +34,8 @@ function Chutar() {
 
     if (chute == numeroSecreto) {
       fillResult("Acertô, mizeravi!")
+      toggleForm();
+      toggleTryAgainButton();
     } else if (chute > 10 || chute < 0) {
       fillResult("Digite um número de 0 a 10!")
     } else {
