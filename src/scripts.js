@@ -28,29 +28,32 @@ function fillResult(text) {
 
 function Chutar() {
 
-    // pegar apenas o valor inserido no input; parseInt - pega apenas numeros inteiros.
-    let chute = parseInt(document.getElementById("valor").value);
-    console.log(chute);
+  // pegar apenas o valor inserido no input; parseInt - pega apenas numeros inteiros.
+  let chute = parseInt(document.getElementById("valor").value);
+  console.log(chute);
 
-    if (chute == numeroSecreto) {
-      fillResult("Acertô, mizeravi!")
-      toggleForm();
-      toggleTryAgainButton();
-    } else if (chute > 10 || chute < 0) {
-      fillResult("Digite um número de 0 a 10!")
-    } else {
-      tentativas -= 1;
-      tentativas === 0 ?
-        TryAgain(`Tentativas esgotadas! O número era ${numeroSecreto}.`)
-        :
-        fillResult(`Errrrrou! Tente novamente. ${tentativas} tentativas restantes.`)
-    }
+  if (chute == numeroSecreto) {
+    fillResult("Acertô, mizeravi!")
+    toggleForm();
+    toggleTryAgainButton();
+  } else if (chute > 10 || chute < 0) {
+    fillResult("Digite um número de 0 a 10!")
+  } else {
+    tentativas -= 1;
+    tentativas == 0 ?
+      TryAgain(`Tentativas esgotadas! O número era ${numeroSecreto}.`)
+      :
+      fillResult(`Errrrrou! Tente novamente. ${tentativas} tentativas restantes.`)
+  }
 }
 
 function TryAgain(message) {
   toggleForm();
   toggleTryAgainButton();
   fillResult(message);
+  numeroSecreto = parseInt(Math.random() * 11);
+  console.log("o novo número secreto é " + numeroSecreto);
+  tentativas = 3;
 }
 
 // numero de tentativas
